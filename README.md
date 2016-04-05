@@ -1,6 +1,6 @@
 # use-xml-body-parser
 
-> Note: custom body parser config is broken in Sails <= v0.12.1, but fixed in the master branch.  This example will work if installed against master (e.g. `npm install github://balderdashy/sails`), or with v0.12.2 when it is released.
+> Note: custom body parser config is broken in Sails <= v0.12.1.  This example will work with version 0.12.2 onward.
 
 Quick demonstration of overriding the default body parser in Sails (Skipper) to allow parsing XML bodies.  All of the relevant code is in the `config/http.js` file.  To test, `npm install` and `sails lift`, then use the `POST /echo` route provided in `config/routes.js`, e.g.:
 
