@@ -82,7 +82,8 @@ module.exports.http = {
       // Create and return the middleware function
       return function(req, res, next) {
         // If we see an application/xml header, parse the body as XML
-        if (req.headers['content-type'] == 'application/xml') {
+        var cType =req.headers['content-type'];
+        if (cType.indexOf('xml')>-1) {
           return xmlparser(req, res, next);
         }
         // Otherwise use Skipper to parse the body
