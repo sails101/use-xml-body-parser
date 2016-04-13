@@ -83,8 +83,10 @@ module.exports.http = {
       return function(req, res, next) {
         // If we see an application/xml header, parse the body as XML
         var cType =req.headers['content-type'];
-        if (cType.indexOf('xml')>-1) {
-          return xmlparser(req, res, next);
+        if (cType){
+          if (cType.indexOf('xml')>-1) {
+            return xmlparser(req, res, next);
+          }
         }
         // Otherwise use Skipper to parse the body
         return skipper(req, res, next);
